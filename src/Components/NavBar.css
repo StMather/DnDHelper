@@ -1,0 +1,37 @@
+.NavBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 8px;
+  background-color: #850808;
+  overflow: hidden;
+  display: block;
+}
+
+.NavBarLeft {
+  color: white;
+  float: left;
+}
+
+.NavBarLeft a {
+  color: white;
+}
+
+.NavBarRight {
+  color: white;
+  float: right;
+}
+.NavBarRight a {
+  color: white;
+}
+
+li {
+  display: inline;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.NavActive {
+  display: inline;
+  padding: 8px;
+  background-color: black;
+}
