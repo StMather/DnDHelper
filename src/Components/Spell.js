@@ -1,7 +1,10 @@
 import React from "react";
 
-const Spell = ({item}) =>(
-    <p>Spell to be built</p>
+const Spell = ({spell}) =>(
+    <div>
+    <h1>{spell.index}</h1>
+    <h2>{spell.url}</h2>
+    </div>
 )
 
 export default Spell;

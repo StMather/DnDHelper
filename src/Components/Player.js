@@ -1,46 +1,72 @@
-import React from 'react';
+import React,{Component} from 'react';
 import NavBar from "./NavBar";
 import {PlayerInfoConsumer} from './PlayerInfo';
 import SpellGrid from './SpellGrid';
-import {styles} from "./Player.css"
+import {styles} from "./Player.css";
+import ClassSelection from './ClassSelection';
+import WeaponSelection from './WeaponSelection';
 
-function callAPI(){
-        const testurl = `https://www.dnd5eapi.co/api/spells/acid-arrow`
 
+
+class Player extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            spellError: true,
+            spellData: [],
+            class: "none",
+            level: "0",
+        }
+
+        this.callAPISpells = this.callAPISpells.bind(this);
+        this.classChange = this.classChange.bind(this);
+        this.levelChange = this.levelChange.bind(this);
+    }
+
+
+callAPISpells(props){
+        const testurl= `https://www.dnd5eapi.co/api/classes/${this.state.class}/spells`
+        //const testurl = `https://www.dnd5eapi.co/api/spells/acid-arrow`
         fetch(testurl)
-        .then(data => data.json()) // Parsing the data into a JavaScript object
-        .then(json => alert(JSON.stringify(json))) // Displaying the stringified data in an alert popup  
-/*
+        .then(response => response.json()) // Parsing the data into a JavaScript object
+        .then((data) => {
+            this.setState({spellData:data.results});
+            this.setState({spellError:false});
+        }) // Displaying the data in an alert popup  
+
+       
         .catch((error) => {
             console.log(error);
-            this.setState({error:true})
         });
-        console.log(data)*/
 }
 
-function Player (){
+classChange(e){
+    this.setState({class: e.target.value});
+}
+levelChange(e){
+    this.setState({level: e.target.value});
+}
 
-
+render(){
         return(
             <PlayerInfoConsumer> 
                {context => (
                <div className="Player">
                 <NavBar active="Player"/>
                 <div className="CharBlock">
-                    <div className="name">Player Name: {context.Name}</div>
+                    <div className="name">Player Name: {context.Name} {context.Class}</div>
                     
                     <div className ="classlevel">
                     <label for="classDrop"> Class</label>
-                        <div className="dropDown" >
-                        <select id="classDrop">
-                            <option className="options" value="0">Select Class</option>
-                            <option className="options" value="Cleric">Cleric</option>
+                    <div className="dropDown" >
+                        <select id="classDrop" value={this.state.class} onChange={this.classChange}>
+                            <ClassSelection/>
                         </select>
-                        </div>
+                    </div>
                         <br/>
-                        <label for="level">Level: </label>
+                        <label for="levelDrop">Level: </label>
                         <div className="dropDown" >
-                            <select id="level">
+                            <select id="levelDrop" onChange={this.levelChange}>
                                 <option className="options" value="1">1</option>
                                 <option className="options" value="2">2</option>
                                 <option className="options" value="3">3</option>
@@ -66,14 +92,15 @@ function Player (){
                     </div>
 
                     <div className="button">
-                        <button onClick={callAPI}>Update</button>
+                        <button onClick={this.callAPISpells}>Update</button>
                     </div>
 
                     <div className ="weaponarmor">
                         <label className="h4txt"for="weapon">Weapon: </label>
                         <div className="dropDown" >
-                        <select className="dropdown" id="weapon">
-                        <option className="options" value="Sword">Sword</option>
+                        <select id="weapon">
+                            <option className="options" value="Sword">Sword</option>
+                            <WeaponSelection/>
                         </select>
                         </div>
                         <br/>
@@ -127,13 +154,14 @@ function Player (){
                         <span> 8th:</span>
                         <span> 9th:</span>
                     </div>
-                </div>              
-                <SpellGrid/>
+                </div>       
+                <SpellGrid spellData={this.state.spellData} error ={this.state.spellError}/>
+
 
             </div>
             )}
             </PlayerInfoConsumer>
         )
+    }
 }
-
 export default Player;

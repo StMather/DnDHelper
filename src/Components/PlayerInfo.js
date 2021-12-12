@@ -6,6 +6,9 @@ class PlayerInfoProvider extends Component{
         //Add varible here
         Name: "Morgromahr",
         Class: "Cleric",
+        SpellData: [],
+        
+
         
     };
 
@@ -13,7 +16,7 @@ class PlayerInfoProvider extends Component{
 render() {
     return(
         <Provider//put variable in line below
-        value={{Name: this.state.Name, Class: this.state.Class}}
+        value={{Name: this.state.Name, Class: this.state.Class, SpellData: this.state.SpellData}}
         >
             {this.props.children}
         </Provider>
@@ -22,3 +25,5 @@ render() {
 }
 
 export {PlayerInfoProvider, Consumer as PlayerInfoConsumer};
+
+

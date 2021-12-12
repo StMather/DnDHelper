@@ -1,0 +1,56 @@
+import React, {useEffect} from 'react';
+import Weapon from './Weapon';
+
+let results =[];
+let error = true;
+
+function RenderWeapons(){
+        if(!error){
+            //console.log("Renderclass:");
+            //console.log(results);
+            return results.map((item) =>(
+                <Weapon
+                key ={item.index}
+                pclass ={item}
+                />
+    
+        ));
+        }
+        else{
+            
+            console.log(error);
+            return <option className="options" value="-1">Not Loading</option>
+            
+        }
+}
+
+function WeaponSelection () {
+    const url= `https://www.dnd5eapi.co/api/equipment-categories/weapon`
+
+    useEffect(() =>{
+        fetch(url)
+        .then(response => response.json()) // Parsing the data into a JavaScript object
+        .then((data) => {
+            results = data.equipment;
+            error = false;
+            
+        })
+    
+        console.log(results);
+    }, [])
+    return(
+            
+        <RenderWeapons/>
+        
+    )
+
+}
+
+
+export default WeaponSelection;
+
+
+
+
+
+//https://www.dnd5eapi.co/api/equipment-categories/weapon

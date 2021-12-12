@@ -13,34 +13,10 @@ class SpellGrid extends Component{
         }
     }
 
-    updateSpell(props){
-        /*this.querySpell(this.props)*/
-        console.log(`Clicked ${this.props}`);
-    }
-
-    querySpell(props){
-        const testurl = `https://www.dnd5eapi.co/api/spells/acid-arrow`
-
-        fetch(testurl)
-        .then((responce) =>{
-            return responce.json();
-        })
-        .then((data) => {
-            this.setState({
-                spells: data,
-                error: false
-            })
-        })
-        .catch((error) => {
-            console.log(error);
-            this.setState({error:true})
-        });
-        console.log(this.state.spells)
-    }
-
     renderSpell(props){
-        if(!this.state.error){
-        return this.state.spells.map((item) =>(
+        //console.log(props.spellData)
+        if(!this.props.error){
+        return this.props.spellData.map((item) =>(
             <Spell
             key ={item.index}
             spell ={item}
@@ -53,6 +29,7 @@ class SpellGrid extends Component{
     }
 
     render(props){
+        //console.log(`Rendering spell ${this.props.error}`)
         return(
         <section className="grid">
             {this.renderSpell(this.props)}
