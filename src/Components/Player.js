@@ -5,6 +5,8 @@ import SpellGrid from './SpellGrid';
 import {styles} from "./Player.css";
 import ClassSelection from './ClassSelection';
 import WeaponSelection from './WeaponSelection';
+import ArmorSelection from './ArmorSelection';
+import StatBlock from './StatBlock';
 
 
 
@@ -16,6 +18,7 @@ class Player extends Component{
             spellData: [],
             class: "none",
             level: "0",
+            weapon: "unarmed",
         }
 
         this.callAPISpells = this.callAPISpells.bind(this);
@@ -57,13 +60,6 @@ render(){
                     <div className="name">Player Name: {context.Name} {context.Class}</div>
                     
                     <div className ="classlevel">
-                    <label for="classDrop"> Class</label>
-                    <div className="dropDown" >
-                        <select id="classDrop" value={this.state.class} onChange={this.classChange}>
-                            <ClassSelection/>
-                        </select>
-                    </div>
-                        <br/>
                         <label for="levelDrop">Level: </label>
                         <div className="dropDown" >
                             <select id="levelDrop" onChange={this.levelChange}>
@@ -89,6 +85,14 @@ render(){
                                 <option className="options"value="20">20</option>
                             </select>
                         </div>
+                    
+                        <br/>
+                        <label for="classDrop"> Class</label>
+                        <div className="dropDown" >
+                            <select id="classDrop" value={this.state.class} onChange={this.classChange}>
+                                <ClassSelection/>
+                            </select>
+                        </div>
                     </div>
 
                     <div className="button">
@@ -97,18 +101,17 @@ render(){
 
                     <div className ="weaponarmor">
                         <label className="h4txt"for="weapon">Weapon: </label>
-                        <div className="dropDown" >
-                        <select id="weapon">
-                            <option className="options" value="Sword">Sword</option>
-                            <WeaponSelection/>
-                        </select>
-                        </div>
+                            <div className="dropDown" >
+                            <select id="weapon">
+                                <WeaponSelection/>
+                            </select>
+                            </div>
                         <br/>
                         <label className="h4txt" for="armor">Armor: </label>
-                        <div className="dropDown" >
-                        <select className="armorDrop" id="armor">
-                        <option className="options" value="Plate">Plate</option>
-                        </select>
+                            <div className="dropDown" >
+                            <select className="armorDrop" id="armor">
+                            <ArmorSelection/>
+                            </select>
                         </div>
                     </div>
 
@@ -122,15 +125,7 @@ render(){
                         <h4>Attack Mod:CODE</h4>
                     </div>
 
-                    <div className="stats">
-                        <h3>Ability scores</h3>
-                    <h4>Str: CODE Mod: Code</h4>
-                    <h4>Dex: CODE Mod: Code</h4>
-                    <h4>Con: CODE Mod: Code</h4>
-                    <h4>Int: CODE Mod: Code</h4>
-                    <h4>Wis: CODE Mod: Code</h4>
-                    <h4>Chr: CODE Mod: Code</h4>
-                    </div>
+                    <StatBlock/>
 
                     <div className="spellcasting">
                         <h3>Spell casting </h3>

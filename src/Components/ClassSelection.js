@@ -19,7 +19,7 @@ function RenderClasses(){
         else{
             
             console.log(error);
-            return <option className="options" value="-1">Not Loading</option>
+            return <option className="options" value="-1">Level First</option>
             
         }
 }
