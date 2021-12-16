@@ -1,31 +1,30 @@
 import React, {useEffect} from 'react';
-import Weapon from './Weapon';
+import Armor from './Armor';
 
 let results =[];
 let error = true;
 
-function RenderWeapons(){
+function RenderArmor(){
         if(!error){
             //console.log("Renderclass:");
             //console.log(results);
             return results.map((item) =>(
-                <Weapon
+                <Armor
                 key ={item.index}
-                weapon ={item}
+                armor ={item}
                 />
     
         ));
         }
         else{
             
-            console.log(error);
             return <option className="options" value="-1">Level First</option>
             
         }
 }
 
 function WeaponSelection () {
-    const url= `https://www.dnd5eapi.co/api/equipment-categories/weapon`
+    const url= `https://www.dnd5eapi.co/api/equipment-categories/armor`
 
     useEffect(() =>{
         fetch(url)
@@ -36,11 +35,10 @@ function WeaponSelection () {
             
         })
     
-        console.log(results);
     }, [])
     return(
             
-        <RenderWeapons/>
+        <RenderArmor/>
         
     )
 

@@ -1,5 +1,7 @@
 import { Component } from "react";
 import NavBar from "./NavBar";
+import MonsterTable from "./MonsterTable/MonsterTable";
+import styles from "./DungeonMaster.css";
 
 
 class DungeonMaster extends Component{
@@ -8,7 +10,7 @@ render(){
     return(
         <div className ="DungeonMaster">
         <NavBar active="DM"/>
-        <h1>DungeonMaster</h1>
+        <MonsterTable/>
         </div>
     )
     }

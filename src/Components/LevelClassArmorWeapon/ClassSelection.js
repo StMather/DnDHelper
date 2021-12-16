@@ -1,56 +1,49 @@
 import React, {useEffect} from 'react';
-import Armor from './Armor';
+import PClass from './PClass';
 
 let results =[];
 let error = true;
 
-function RenderArmor(){
+function RenderClasses(){
         if(!error){
             //console.log("Renderclass:");
             //console.log(results);
             return results.map((item) =>(
-                <Armor
+                <PClass
                 key ={item.index}
-                armor ={item}
+                pclass ={item}
                 />
     
         ));
         }
         else{
             
-            console.log(error);
             return <option className="options" value="-1">Level First</option>
             
         }
 }
 
-function WeaponSelection () {
-    const url= `https://www.dnd5eapi.co/api/equipment-categories/armor`
+function ClassSelection () {
+    const url= `https://www.dnd5eapi.co/api/classes`
 
     useEffect(() =>{
         fetch(url)
         .then(response => response.json()) // Parsing the data into a JavaScript object
         .then((data) => {
-            results = data.equipment;
+            results = data.results;
             error = false;
             
         })
     
-        console.log(results);
     }, [])
     return(
             
-        <RenderArmor/>
+        <RenderClasses/>
         
     )
 
 }
 
 
-export default WeaponSelection;
+export default ClassSelection;
 
-
-
-
-
-//https://www.dnd5eapi.co/api/equipment-categories/weapon

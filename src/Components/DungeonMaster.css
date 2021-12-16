@@ -1,0 +1,85 @@
+.MonsterBlock {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-gap: 10px;
+  background-color: black;
+  padding: 10px;
+  color: black;
+}
+
+.best {
+  text-align: center;
+  background: rgb(1, 182, 16);
+  font-size: 30px;
+  color: white;
+  font-weight: bolder;
+}
+.best .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+.best:hover .tooltiptext {
+  visibility: visible;
+}
+
+.fine {
+  text-align: center;
+  background: rgb(175, 99, 0);
+  font-size: 30px;
+  color: white;
+  font-weight: bolder;
+}
+
+.fine .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+.fine:hover .tooltiptext {
+  visibility: visible;
+}
+
+.worst {
+  text-align: center;
+  background: #850808;
+  font-size: 30px;
+  color: white;
+  font-weight: bolder;
+}
+
+.worst .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+.worst:hover .tooltiptext {
+  visibility: visible;
+}
