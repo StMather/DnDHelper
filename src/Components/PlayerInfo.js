@@ -53,6 +53,10 @@ render() {
                 this.setState({weapon: props.weapon})
                 this.setState({armor: props.armor})
                 
+            },
+            saveName: props =>{
+                this.setState({Name: props})
+                
             }
             }
         }

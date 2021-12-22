@@ -3,13 +3,14 @@ import styles from "../DungeonMaster.css"
 
 
 class MonsterCard extends Component{
-    constructor(name,maxhp, hp, ac){
-        super(name, maxhp, hp, ac);
+    constructor(name,maxhp, hp, ac, index){
+        super(name, maxhp, hp, ac, index);
         this.state ={
             Mname: name,
             MMaxhp: maxhp,
             Mhp: hp,
             Mac: ac,
+            Index: index,
         }
     }
     
@@ -25,9 +26,9 @@ class MonsterCard extends Component{
             //49-25 fine
             //25-0 worst
             let percent = (hpIn/maxHp)*100;
-            console.log(maxHp)
-            console.log(hpIn)
-            console.log(percent)
+            //console.log(maxHp)
+            //console.log(hpIn)
+            //console.log(percent)
             if(percent >=50){
                 return "best";
             }
@@ -47,7 +48,7 @@ class MonsterCard extends Component{
         }
 
         render = () =>{
-            console.log(this.state.Mname)
+            //console.log(this.state.Mname)
             return(
                 <div className={this.percentHp(this.state.MMaxhp, this.state.Mhp)}>
                     <span >{this.state.Mname}</span>

@@ -2,9 +2,9 @@
   display: grid;
   grid-template-columns: auto auto auto auto auto auto;
   grid-gap: 10px;
-  background-color: black;
+  background-color: rgb(65, 70, 73);
   padding: 10px;
-  color: black;
+  color: white;
 }
 
 .best {
@@ -82,4 +82,45 @@
 
 .worst:hover .tooltiptext {
   visibility: visible;
+}
+
+.dropDown {
+  width: 100%;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px rgba(133, 0, 0, 0.8);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: black;
+  background-image: black;
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+}
+
+dropdown,
+.dropDown::after {
+  grid-area: select;
+}
+
+.dropDown:after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: rgba(133, 0, 0, 0.8);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  justify-self: end;
+}
+
+.monsterPicker {
+  grid-area: 1/6/6;
+  background-color: rgba(133, 0, 0, 0.8);
+}
+
+.CRtitle {
+  background-color: rgba(133, 0, 0, 0.8);
+  justify-self: center;
 }
