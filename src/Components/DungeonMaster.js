@@ -1,7 +1,7 @@
 import { Component } from "react";
 import NavBar from "./NavBar";
 import MonsterTable from "./MonsterTable/MonsterTable";
-import styles from "./DungeonMaster.css";
+import "./DungeonMaster.css";
 
 
 class DungeonMaster extends Component{

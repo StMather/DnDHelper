@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import styles from "../DungeonMaster.css"
+import "../DungeonMaster.css"
 
 
 class MonsterCard extends Component{

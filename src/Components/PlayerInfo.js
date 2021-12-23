@@ -6,7 +6,7 @@ class PlayerInfoProvider extends Component{
         //Add varible here
         Name: "Morgromahr",
         level: 0,
-        Class: "Cleric",
+        Class: "cleric",
         weapon: "Unarmed",
         armor:  "none",
         SpellData: [],

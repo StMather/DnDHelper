@@ -2,11 +2,12 @@ import React,{Component} from 'react';
 import NavBar from "./NavBar";
 import {PlayerInfoConsumer} from './PlayerInfo';
 import SpellGrid from './Spells/SpellGrid';
-import {styles} from "./Player.css";
+import "./Player.css";
 import StatBlock from './StatBlock';
 import SpellCasting from './Spellcasting/Spellcasting';
 import LevelClassArmorWeapon from './LevelClassArmorWeapon/LevelClassArmorWeapon';
 import SpellSlots from './SpellSlots/SpellSlots';
+import axios from "axios";
 
 
 
@@ -16,29 +17,75 @@ class Player extends Component{
         this.state = {
             spellError: true,
             spellData: [],
+            tempData: "",
+            spellsLoaded: false,
         }
 
         this.callAPISpells = this.callAPISpells.bind(this);
     }
 
 
-callAPISpells(props){
+async callAPISpells(props){
     console.log(props);
-        //let lowered = props.toLowerCase();
         const testurl= `https://www.dnd5eapi.co/api/classes/${props}/spells`
-        //const testurl = `https://www.dnd5eapi.co/api/spells/acid-arrow`
-        fetch(testurl)
-        .then(response => response.json()) // Parsing the data into a JavaScript object
-        .then((data) => {
-            this.setState({spellData:data.results});
-            this.setState({spellError:false});
-        }) // Displaying the data in an alert popup  
 
-       
-        .catch((error) => {
-            console.log(error);
-        });
-}
+        const response = await axios.get(testurl)
+
+        this.setState({spellData:response.data.results});
+        this.setState({spellError:false});
+
+            console.log(this.state.spellData.length)
+            for(var i = 0; i < this.state.spellData.length ; i++)
+            {
+                let tempData = this.state.spellData[i]
+                console.log(tempData, i);
+                //() => this.upgradeSpell(tempData))
+                //console.log(this.upgradeSpell(tempData.url, this.state.spellError))
+                this.UpgradeSpell(tempData.url, this.state.spellError, i);
+                
+                //tempSpellData[i] = this.UpgradeSpell(tempData.url, this.state.spellError)
+                //console.log(tempSpellData[i]);
+            }
+    }
+    
+            
+
+
+    UpgradeSpell = async (url, error, index) =>{
+        let tempSpellData = this.state.spellData;
+        console.log(error);
+        console.log(url);
+        if(!error)
+        {
+            console.log(`https://www.dnd5eapi.co${url}`)
+            const testurl= `https://www.dnd5eapi.co${url}`
+
+            const response = await axios.get(testurl)
+                //.then(response => response.json()) // Parsing the data into a JavaScript object
+                //.then((data) => {\
+                const data = await response.data;
+                console.log(data);
+                this.setState({spellsLoaded: true});
+
+                if(!this.state.spellsLoaded)
+                {
+                    
+                }
+                else{
+                    tempSpellData[index] = data;
+                    console.log(tempSpellData[index]);
+                    this.setState({spellData: tempSpellData});
+                }
+                
+                //this.setState({spellData:data.results});
+                //this.setState({spellError:false});
+        } // Displaying the data in an alert popup  
+    
+        //.catch((error) => {
+            //console.log(error);
+        //});
+    }
+
 
 
 render(){
@@ -80,5 +127,7 @@ render(){
             </PlayerInfoConsumer>
         )
     }
+
 }
+
 export default Player;

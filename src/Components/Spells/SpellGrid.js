@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Spell from './Spell';
 import SpellError from './SpellError';
 
-import styles from './SpellGrid.css';
+import './SpellGrid.css';
 
 class SpellGrid extends Component{
     constructor(props){
@@ -13,26 +13,33 @@ class SpellGrid extends Component{
         }
     }
 
-    renderSpell(props){
-        //console.log(props.spellData)
-        if(!this.props.error){
-        return this.props.spellData.map((item) =>(
-            <Spell
-            key ={item.index}
-            spell ={item}
-            />
-        ));
-        }
+    
+
+    renderSpell(spellData, error){
+       //console.log(spellData)
+        //console.log(this.props.error)
+        if(!error){
+            console.log("inside if")
+            
+            return spellData.map((item) =>(
+                <Spell
+                key = {item.index}
+                spell = {item}
+                />
+            ));
+            }
         else{
             return <SpellError />
         }
     }
 
     render(props){
-        //console.log(`Rendering spell ${this.props.error}`)
+        //console.log(`Rendering spell ${this.props.error}`) {this.upgradeSpell(item.url)}
+        //console.log("here");
+        //console.log(this.props.spells);
         return(
         <section className="grid">
-            {this.renderSpell(this.props)}
+            {this.renderSpell(this.props.spellData,this.props.error)}
         </section>
         )
     }
