@@ -1,0 +1,29 @@
+.SpellCard {
+  background-color: rgba(133, 0, 0, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+  border-style: outset;
+  border-color: black;
+  border-width: 5px;
+  color: white;
+}
+
+.SpellCard .effects {
+  font-size: 20px;
+}
+
+.SpellCard .section {
+  border-style: outset;
+  border-color: dimgray;
+  border-width: 5px;
+  border-radius: 10px;
+}
+
+.SpellCard .sectionLarge {
+  border-style: outset;
+  border-color: dimgray;
+  border-width: 5px;
+  border-radius: 10px;
+  font-size: 25px;
+}

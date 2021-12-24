@@ -12,7 +12,8 @@ import{
   Home,
   Player,
   Rules,
-  Spells
+  Spells,
+  SpellInfo
 
 } from "./Components";
 
@@ -26,6 +27,7 @@ ReactDOM.render(
       <Route path="/rules" element={<Rules />}/>
       <Route path="/spells" element={<Spells />}/>
       <Route path="/conditions" element={<Conditions />}/>
+      <Route path="/spellinfo" element={<SpellInfo/>}/>
     </Routes>
     <App />
   </Router>,

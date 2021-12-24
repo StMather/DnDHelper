@@ -1,8 +1,9 @@
 import React from 'react';
+import "./SpellGrid.css";
 
 const SpellError = () =>(
     <div>
-        <h1> No spells to see here!</h1>
+        <h1 className='SpellCard'> No spells to see here!</h1>
     </div>
 );
 

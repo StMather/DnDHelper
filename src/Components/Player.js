@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import NavBar from "./NavBar";
 import {PlayerInfoConsumer} from './PlayerInfo';
-import SpellGrid from './Spells/SpellGrid';
+import SpellGrid from './Spell/SpellGrid';
 import "./Player.css";
 import StatBlock from './StatBlock';
 import SpellCasting from './Spellcasting/Spellcasting';
