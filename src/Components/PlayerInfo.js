@@ -34,7 +34,7 @@ render() {
             wis: this.state.wis,
             chr: this.state.chr,
             level: this.state.level,
-            weapon: this.state.level,
+            weapon: this.state.weapon,
             armor: this.state.armor,
             saveStats: props =>{
                 //console.log(props);

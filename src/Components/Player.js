@@ -38,7 +38,7 @@ async callAPISpells(props){
             for(var i = 0; i < this.state.spellData.length ; i++)
             {
                 let tempData = this.state.spellData[i]
-                console.log(tempData, i);
+                //console.log(tempData, i);
                 //() => this.upgradeSpell(tempData))
                 //console.log(this.upgradeSpell(tempData.url, this.state.spellError))
                 this.UpgradeSpell(tempData.url, this.state.spellError, i);
@@ -53,18 +53,18 @@ async callAPISpells(props){
 
     UpgradeSpell = async (url, error, index) =>{
         let tempSpellData = this.state.spellData;
-        console.log(error);
-        console.log(url);
+        //console.log(error);
+        //console.log(url);
         if(!error)
         {
-            console.log(`https://www.dnd5eapi.co${url}`)
+            //console.log(`https://www.dnd5eapi.co${url}`)
             const testurl= `https://www.dnd5eapi.co${url}`
 
             const response = await axios.get(testurl)
                 //.then(response => response.json()) // Parsing the data into a JavaScript object
                 //.then((data) => {\
                 const data = await response.data;
-                console.log(data);
+                //console.log(data);
                 this.setState({spellsLoaded: true});
 
                 if(!this.state.spellsLoaded)
@@ -73,7 +73,7 @@ async callAPISpells(props){
                 }
                 else{
                     tempSpellData[index] = data;
-                    console.log(tempSpellData[index]);
+                    //console.log(tempSpellData[index]);
                     this.setState({spellData: tempSpellData});
                 }
                 
@@ -95,7 +95,14 @@ render(){
                <div className="Player">
                 <NavBar active="Player"/>
                 <div className="CharBlock">
-                    <div className="name">Player Name: {context.Name} {context.Class}</div>
+                    <div className="name"> 
+                    <h3>Name: {context.Name}</h3>
+                    <h4>Class: {context.Class}</h4>
+                    <h4>Level: {context.level}</h4>
+                    <h4>Weapon: {context.weapon}</h4>
+                    <h4>Armor:  {context.armor}</h4>
+
+                    </div>
                     
                     <LevelClassArmorWeapon/>
 

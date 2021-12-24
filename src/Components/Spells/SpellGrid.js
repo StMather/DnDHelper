@@ -19,7 +19,7 @@ class SpellGrid extends Component{
        //console.log(spellData)
         //console.log(this.props.error)
         if(!error){
-            console.log("inside if")
+            //console.log("inside if")
             
             return spellData.map((item) =>(
                 <Spell
