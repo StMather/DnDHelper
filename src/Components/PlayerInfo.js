@@ -9,6 +9,7 @@ class PlayerInfoProvider extends Component{
         Class: "cleric",
         weapon: "Unarmed",
         armor:  "none",
+        armorClass: 0,
         SpellData: [],
         str: 10,
         dex: 10,
@@ -36,6 +37,7 @@ render() {
             level: this.state.level,
             weapon: this.state.weapon,
             armor: this.state.armor,
+            armorClass: this.state.armorClass,
             saveStats: props =>{
                 //console.log(props);
                 this.setState({str: props.str})
@@ -57,6 +59,9 @@ render() {
             saveName: props =>{
                 this.setState({Name: props})
                 
+            },
+            saveArmorClass: props=>{
+                this.setState({armorClass: props})
             }
             }
         }

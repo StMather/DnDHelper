@@ -16,12 +16,12 @@ class MonsterTable extends Component{
 
         this.changeChallangeRating = this.changeChallangeRating.bind(this);
         this.changeTempMonsterAPI = this.changeTempMonsterAPI.bind(this);
-        this.callAPIMonsters = this.callAPIMonsters.bind(this);
+        this.CallAPIMonster = this.CallAPIMonster.bind(this);
         this.BuildMonsterAPI = this.BuildMonsterAPI.bind(this);
     }
 
 
-    callAPIMonsters(props){//change to use for individual monster call
+    CallAPIMonster(props){//change to use for individual monster call
     //console.log(props);
         //let lowered = props.toLowerCase();
         const testurl= `https://www.dnd5eapi.co/api/monsters?challenge_rating=${props}`

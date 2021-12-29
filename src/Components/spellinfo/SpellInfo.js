@@ -26,7 +26,6 @@ class SpellInfo extends Component{
         
         if(this.state.spellError)
         {
-            console.log(this.state.spellError)
             
             return(
                 <div className="spell">
@@ -38,7 +37,6 @@ class SpellInfo extends Component{
             )
         }
         else{
-            console.log(this.state.spellError)
             return(
                 <div className="spell">
                     <NavBar active="none"/>

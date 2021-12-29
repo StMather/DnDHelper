@@ -11,7 +11,8 @@ class LevelClassArmorWeapon extends Component{
             class: "none",
             level: "0",
             weapon: "Unarmed",
-            armor: "None"
+            armor: "None",
+            armorurl: "None",
         }
 
         this.classChange = this.classChange.bind(this);
