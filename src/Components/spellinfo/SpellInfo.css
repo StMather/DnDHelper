@@ -1,0 +1,15 @@
+body {
+  background-color: black;
+}
+
+.spell {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.spellbutton {
+  font-size: 100px;
+  background-color: rgba(133, 0, 0, 0.8);
+  color: white;
+}
