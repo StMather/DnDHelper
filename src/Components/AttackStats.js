@@ -11,7 +11,7 @@ function ArmorClass(props){
         const dexMod= (Math.floor((props.dexIn - 10) /2));
 
         //useEffect(() =>{
-            if(props.armorIn !== "none" && props.armorIn !== 'None' && props.armorIn !== '-1'){
+            if(props.armorIn !== "none" && props.armorIn !== 'None' && props.armorIn !== '-1' && !props.armorIn.includes("magic")){
                 fetch(url)
                 .then(response => response.json()) // Parsing the data into a JavaScript object
                 .then((data) => {

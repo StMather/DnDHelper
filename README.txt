@@ -9,7 +9,7 @@ Which technologies were chosen?
 I chose to use React JS, axios, HTML and CSS.
 
 Features I hope to implement in the future:
-In the future I would like to add players to the dungeon master page with information that would be usefull for the dungeon master. Damage on the monsters, removing monsters. I also want to add Spells, Rules and Conditons for easy look up of buried infromation. I would like to make the spells on the player page lilited to the character level so there are not as many for lower lever players.
+In the future I would like to add players to the dungeon master page with information that would be usefull for the dungeon master. Damage on the monsters, removing monsters. I also want to add Spells, Rules and Conditons for easy look up of buried infromation. I would like to make the spells on the player page lilited to the character level so there are not as many for lower lever players. Make magic armors work and program know cantrips.
 
 (Optional) Challenges i faced:
 React, Api calls and waiting for results, React rendering, passing information around in React.
