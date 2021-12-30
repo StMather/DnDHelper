@@ -1,7 +1,88 @@
 import React from "react";
 import {PlayerInfoConsumer} from '../PlayerInfo';
 
+const calculateCantrips = (classIn, levelIn) =>{
+    console.log(`${classIn} : ${levelIn}`)
 
+    if(classIn === "barbarian" || classIn === "monk" || classIn === "paladin" || classIn === "ranger")
+   {
+        return ("0")
+    
+   }
+    if(classIn === "bard" || classIn === "druid" || classIn === "warlock")
+   {
+        if(levelIn < 4){
+        
+            return ("2")
+        }
+        if(levelIn >= 4 && levelIn < 10){
+
+            return ("3")
+        }
+        if(levelIn >= 10){
+
+            return ("4")
+        }
+    
+   }
+   if(classIn === "cleric" || classIn === "wizard")
+   {
+        if(levelIn < 4){
+        
+            return ("3")
+        }
+        if(levelIn >= 4 && levelIn < 10){
+
+            return ("4")
+        }
+        if(levelIn >= 10){
+
+            return ("5")
+        }
+    
+   }
+   if(classIn === "fighter")
+   {
+        if(levelIn < 10){
+        
+            return ("2")
+        }
+        if(levelIn >=  10){
+
+            return ("3")
+        }
+    
+   }
+   if(classIn === "rogue")
+   {
+        if(levelIn < 10){
+        
+            return ("3")
+        }
+        if(levelIn >= 10){
+
+            return ("4")
+        }
+    
+   }
+   if(classIn === "sorcerer")
+   {
+        if(levelIn < 4){
+        
+            return ("4")
+        }
+        if(levelIn >= 4 && levelIn < 10){
+
+            return ("5")
+        }
+        if(levelIn >= 10){
+
+            return ("6")
+        }
+    
+   }
+   return ("0")
+}
 
 const calculateSpellSave = (classIn, chr, int, wis, level) =>{
     //8 + spell mod + prof
@@ -176,7 +257,7 @@ function SpellCasting () {
                 <h4>Spell save: {calculateSpellSave(context.Class, context.chr, context.int, context.wis, context.level) } </h4>
                 <h4> Spell attack bonus: {calculateSpellAttackBonus(context.Class, context.chr, context.int, context.wis, context.level) }</h4>
                 <h4>Spellcasting Ability: {spellcastingAbility(context.Class, context.chr, context.int, context.wis) }</h4>
-                <h4>Cantrips Known:CODE</h4>
+                <h4>Cantrips Known: {calculateCantrips(context.Class, context.level)}</h4>
             </div>
         )}
         </PlayerInfoConsumer>

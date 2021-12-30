@@ -27,7 +27,6 @@ class Player extends Component{
     }
 
 async CallAPISpells(props){
-    console.log(props);
         const testurl= `https://www.dnd5eapi.co/api/classes/${props}/spells`
 
         const response = await axios.get(testurl)
@@ -35,17 +34,11 @@ async CallAPISpells(props){
         this.setState({spellData:response.data.results});
         this.setState({spellError:false});
 
-            console.log(this.state.spellData.length)
             for(var i = 0; i < this.state.spellData.length ; i++)
             {
                 let tempData = this.state.spellData[i]
-                //console.log(tempData, i);
-                //() => this.upgradeSpell(tempData))
-                //console.log(this.upgradeSpell(tempData.url, this.state.spellError))
                 this.UpgradeSpell(tempData.url, this.state.spellError, i);
                 
-                //tempSpellData[i] = this.UpgradeSpell(tempData.url, this.state.spellError)
-                //console.log(tempSpellData[i]);
             }
     }
     
@@ -73,7 +66,6 @@ async CallAPISpells(props){
     }
 
     ArmorName = (props) =>{
-        console.log(props.props)
         let stringProp =  (props.props);
         if (typeof stringProp === 'string'){
             if(stringProp.includes("magic")){

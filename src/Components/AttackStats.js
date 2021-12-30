@@ -31,7 +31,7 @@ function ArmorClass(props){
                 armorClass = dexMod;
             }
             return(
-                <span>{armorClass}</span>
+                <span></span>
             )
 
 }
