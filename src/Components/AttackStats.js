@@ -4,7 +4,6 @@ import {PlayerInfoConsumer} from './PlayerInfo';
 let armorClass=0;
 
 function ArmorClass(props){
-    console.log(props)
     
     
         const url= `https://www.dnd5eapi.co${props.armorIn}`
@@ -15,9 +14,7 @@ function ArmorClass(props){
                 fetch(url)
                 .then(response => response.json()) // Parsing the data into a JavaScript object
                 .then((data) => {
-                    console.log(data)
                     armorClass = data.armor_class.base;
-                    console.log()
                     if(data.armor_class.dex_bonus){
                         if(data.armor_class.max_bonus != null){
                             if(dexMod >= data.armor_class.max_bonus){
@@ -28,28 +25,18 @@ function ArmorClass(props){
                             armorClass += dexMod;
                         }
                     }
-                    //return(
-            
-                        //<h4>AC: <span>{armorClass}</span></h4>
-                    //)
                 })
             }
             else{
-                //return(
-            
-                   // <h4>AC: {dexMod}</h4>
-                //) 
+                armorClass = dexMod;
             }
-        //}, [])
-        console.log(armorClass);
-        return(
-            <span></span>
-            //<h4>AC: <span>{armorClass}</span></h4>
-        )
+            return(
+                <span>{armorClass}</span>
+            )
+
 }
 
 function AttackStats(){
-    console.log(`armorClass: ${armorClass}`)
     return(
         <PlayerInfoConsumer> 
                {context => (
