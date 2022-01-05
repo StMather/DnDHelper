@@ -67,7 +67,7 @@ select {
   outline: none;
 }
 
-.dropDown {
+.playerDropDown {
   width: 100%;
   min-width: 15ch;
   max-width: 30ch;
@@ -82,14 +82,15 @@ select {
   display: grid;
   grid-template-areas: "select";
   align-items: center;
+  margin-left: 20px;
 }
 
-dropdown,
-.dropDown::after {
+playerDropdown,
+.playerDropDown::after {
   grid-area: select;
 }
 
-.dropDown:after {
+.playerDropDown:after {
   content: "";
   width: 0.8em;
   height: 0.5em;

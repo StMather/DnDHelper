@@ -37,6 +37,19 @@ class LevelClassArmorWeapon extends Component{
         this.setState({weapon: e.target.value});
     }
 
+    showLevels(){
+        let out = [];
+        for(let i=1; i<=20; i++)
+        {
+            out.push(i)
+            //<option className="options" value={i}>{i}</option>
+            
+        }
+        return out.map((item) =>(
+            <option key = {item} className="options" value={item}>{item}</option>
+        ))
+    }
+
     render(){
 
         return(
@@ -44,48 +57,30 @@ class LevelClassArmorWeapon extends Component{
             {context => (
             <div className ="classlevel">
                         <label htmlFor="levelDrop">Level: </label>
-                        <div className="dropDown" >
+                        <div className="playerDropDown" >
                             <select id="levelDrop" onChange={this.levelChange}>
-                                <option className="options" value="1">1</option>
-                                <option className="options" value="2">2</option>
-                                <option className="options" value="3">3</option>
-                                <option className="options" value="4">4</option>
-                                <option className="options" value="5">5</option>
-                                <option className="options" value="6">6</option>
-                                <option className="options" value="7">7</option>
-                                <option className="options" value="8">8</option>
-                                <option className="options" value="9">9</option>
-                                <option className="options" value="10">10</option>
-                                <option className="options" value="11">11</option>
-                                <option className="options" value="12">12</option>
-                                <option className="options" value="13">13</option>
-                                <option className="options" value="14">14</option>
-                                <option className="options" value="15">15</option>
-                                <option className="options" value="16">16</option>
-                                <option className="options" value="17">17</option>
-                                <option className="options" value="18">18</option>
-                                <option className="options" value="19">19</option>
-                                <option className="options"value="20">20</option>
+                               <this.showLevels/>
+                               
                             </select>
                         </div>
                     
                         <br/>
                         <label htmlFor="classDrop"> Class:</label>
-                        <div className="dropDown" >
+                        <div className="playerDropDown" >
                             <select id="classDrop" onChange={this.classChange}>
                                 <ClassSelection/>
                             </select>
                         </div>
                 
                         <label className="h4txt" htmlFor="weapon">Weapon: </label>
-                            <div className="dropDown" >
+                            <div className="playerDropDown" >
                             <select id="weapon" onChange={this.weaponChange}>
                                 <WeaponSelection/>
                             </select>
                             </div>
                         <br/>
                         <label className="h4txt" htmlFor="armor">Armor: </label>
-                            <div className="dropDown" >
+                            <div className="playerDropDown" >
                             <select id="armor" onChange={this.armorChange}>
                                 <ArmorSelection/>
                                 <option className="options" value="None">None</option>

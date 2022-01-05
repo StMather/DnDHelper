@@ -18,7 +18,7 @@ function Home(){
             <h2> Please enter your characters name! </h2>
             <h1 className="name"> {context.Name}</h1>
             
-            <label htmlfor="Name"> New Name:</label><br/>
+            <label htmlFor="Name"> New Name:</label><br/>
             <input className="newName" type="text" id="Name" name="Name" /><br/>
             <button className="button" onClick= {() => context.saveName(document.getElementById("Name").value)}> Submit</button>
             </div>

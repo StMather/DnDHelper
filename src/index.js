@@ -7,12 +7,9 @@ import reportWebVitals from './reportWebVitals';
 import {PlayerInfoProvider} from './Components/PlayerInfo';
 
 import{
-  Conditions,
   DungeonMaster,
   Home,
   Player,
-  Rules,
-  Spells,
   SpellInfo
 
 } from "./Components";
@@ -24,9 +21,6 @@ ReactDOM.render(
       <Route path="/" element={<Home />} />
       <Route path="/dungeonMaster" element={<DungeonMaster />} />
       <Route path="/player" element={<Player />} />
-      <Route path="/rules" element={<Rules />}/>
-      <Route path="/spells" element={<Spells />}/>
-      <Route path="/conditions" element={<Conditions />}/>
       <Route path="/spellinfo" element={<SpellInfo/>}/>
     </Routes>
     <App />
@@ -35,7 +29,14 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+/*
+Add below routes later as they are built, be sure to import as well
 
+      <Route path="/rules" element={<Rules />}/>
+      <Route path="/spells" element={<Spells />}/>
+      <Route path="/conditions" element={<Conditions />}/>
+
+*/
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

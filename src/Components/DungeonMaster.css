@@ -5,6 +5,7 @@
   background-color: rgb(65, 70, 73);
   padding: 10px;
   color: white;
+  text-align: center;
 }
 
 .best {
@@ -84,7 +85,7 @@
   visibility: visible;
 }
 
-.dropDown {
+.DMDropDown {
   width: 100%;
   min-width: 15ch;
   max-width: 30ch;
@@ -99,14 +100,18 @@
   display: grid;
   grid-template-areas: "select";
   align-items: center;
+  left: 25%;
+  right: auto;
+  text-align: center;
+  transform: translate(10%, 0);
 }
 
-dropdown,
-.dropDown::after {
+DMDropdown,
+.DMDropDown::after {
   grid-area: select;
 }
 
-.dropDown:after {
+.DMDropDown:after {
   content: "";
   width: 0.8em;
   height: 0.5em;

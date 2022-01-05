@@ -6,9 +6,6 @@ function NavBar(props){
     let homeButton= '';
     let dmButton= '';
     let playerButton= '';
-    let spellButton ='';
-    let ruleButton = '';
-    let conditionButton = '';
 
     switch (props.active) {
         case 'DM':
@@ -17,17 +14,8 @@ function NavBar(props){
         case 'Player':
                 playerButton ='NavActive';
                 break;
-        case 'Spells':
-                spellButton ='NavActive';
-                break;
         case 'Home':
             homeButton = 'NavActive';
-            break;
-        case 'Rules':
-            ruleButton = 'NavActive';
-            break;
-        case 'Conditions':
-            conditionButton = 'NavActive';
             break;
         default:
             break;
@@ -37,16 +25,7 @@ function NavBar(props){
             <div className="NavBarLeft">
                 <li className={homeButton}>
                 <NavLink to="/" >Home</NavLink>
-                </li>
-                <li className={spellButton}>
-                <NavLink to="/spells">Spells</NavLink>
-                </li>
-                <li className={ruleButton}>
-                <NavLink to="/rules">Rules</NavLink>
-                </li>
-                <li className={conditionButton}>
-                <NavLink to="/conditions">Conditions</NavLink>
-                </li>
+                </li>            
             </div>
             <div className="NavBarRight">
                 <li className={playerButton}>
@@ -61,5 +40,19 @@ function NavBar(props){
     
 
 }
+
+/*
+Add to nav bar later as they are built
+                <li className={spellButton}>
+                <NavLink to="/spells">Spells</NavLink>
+                </li>
+                <li className={ruleButton}>
+                <NavLink to="/rules">Rules</NavLink>
+                </li>
+                <li className={conditionButton}>
+                <NavLink to="/conditions">Conditions</NavLink>
+                </li>
+*/
+
 
 export default NavBar;
