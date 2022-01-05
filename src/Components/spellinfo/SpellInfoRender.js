@@ -38,7 +38,7 @@ function HigherLevel(){
     }
     else{
         return(
-        <span></span>
+            <span></span>
         )
     }
 }
@@ -85,9 +85,10 @@ function SpellSave(){
 
         return(
             <h2>
-            <span className="red">Save DC: </span><span>{results.dc.dc_type.name}</span>
-            <br/>
-            <span className="red">On Success: </span><span>{results.dc.dc_success}</span>
+                <span className="red">Save DC: </span><span>{results.dc.dc_type.name}</span>
+                <br/>
+                
+                <span className="red">On Success: </span><span>{results.dc.dc_success}</span>
             </h2>
         )
     }

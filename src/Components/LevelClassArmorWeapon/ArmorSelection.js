@@ -5,22 +5,22 @@ let results =[];
 let error = true;
 
 function RenderArmor(){
-        if(!error){
-            //console.log("Renderclass:");
-            //console.log(results);
-            return results.map((item) =>(
-                <Armor
-                key ={item.index}
-                armor ={item}
-                />
-    
+    if(!error){
+        //console.log("Renderclass:");
+        //console.log(results);
+        return results.map((item) =>(
+            <Armor
+            key ={item.index}
+            armor ={item}
+            />
+
         ));
-        }
-        else{
-            
-            return <option className="options" value="-1">Level First</option>
-            
-        }
+    }
+    else{
+        
+        return <option className="options" value="-1">Level First</option>
+        
+    }
 }
 
 function WeaponSelection (){
@@ -36,19 +36,11 @@ function WeaponSelection (){
         })
     
     }, [url])
-    return(
-            
+    return(  
         <RenderArmor/>
-        
     )
 
 }
 
-
 export default WeaponSelection;
 
-
-
-
-
-//https://www.dnd5eapi.co/api/equipment-categories/weapon

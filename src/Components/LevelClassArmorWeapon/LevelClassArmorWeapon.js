@@ -42,8 +42,6 @@ class LevelClassArmorWeapon extends Component{
         for(let i=1; i<=20; i++)
         {
             out.push(i)
-            //<option className="options" value={i}>{i}</option>
-            
         }
         return out.map((item) =>(
             <option key = {item} className="options" value={item}>{item}</option>
@@ -56,46 +54,46 @@ class LevelClassArmorWeapon extends Component{
             <PlayerInfoConsumer> 
             {context => (
             <div className ="classlevel">
-                        <label htmlFor="levelDrop">Level: </label>
-                        <div className="playerDropDown" >
-                            <select id="levelDrop" onChange={this.levelChange}>
-                               <this.showLevels/>
-                               
-                            </select>
-                        </div>
-                    
-                        <br/>
-                        <label htmlFor="classDrop"> Class:</label>
-                        <div className="playerDropDown" >
-                            <select id="classDrop" onChange={this.classChange}>
-                                <ClassSelection/>
-                            </select>
-                        </div>
-                
-                        <label className="h4txt" htmlFor="weapon">Weapon: </label>
-                            <div className="playerDropDown" >
-                            <select id="weapon" onChange={this.weaponChange}>
-                                <WeaponSelection/>
-                            </select>
-                            </div>
-                        <br/>
-                        <label className="h4txt" htmlFor="armor">Armor: </label>
-                            <div className="playerDropDown" >
-                            <select id="armor" onChange={this.armorChange}>
-                                <ArmorSelection/>
-                                <option className="options" value="None">None</option>
-                            </select>
-                        </div>
-
-                        <button className = "button" onClick={() =>context.saveLCWA(this.state) }>Save changes </button>
+                <label htmlFor="levelDrop">Level: </label>
+                <div className="playerDropDown" >
+                    <select id="levelDrop" onChange={this.levelChange}>
+                        <this.showLevels/>
                         
+                    </select>
+                </div>
+                <br/>
+
+                <label htmlFor="classDrop"> Class:</label>
+                <div className="playerDropDown" >
+                    <select id="classDrop" onChange={this.classChange}>
+                        <ClassSelection/>
+                    </select>
+                </div>
+        
+                <label className="h4txt" htmlFor="weapon">Weapon: </label>
+                    <div className="playerDropDown" >
+                    <select id="weapon" onChange={this.weaponChange}>
+                        <WeaponSelection/>
+                    </select>
                     </div>
-                     )}
-                     </PlayerInfoConsumer>
+                <br/>
+
+                <label className="h4txt" htmlFor="armor">Armor: </label>
+                    <div className="playerDropDown" >
+                    <select id="armor" onChange={this.armorChange}>
+                        <ArmorSelection/>
+                        <option className="options" value="None">None</option>
+                    </select>
+                </div>
+
+                <button className = "button" onClick={() =>context.saveLCWA(this.state) }>Save changes </button>
+                
+            </div>
+            )}
+            </PlayerInfoConsumer>
         )
     }
 
 }
-//context.saveLCWA(this.state)  <button className = "button" onClick={context.saveLCWA(this.state) }>Save changes </button>
-// <button className = "button" onClick={() =>console.log(this.state) }>Save changes </button>
+
 export default LevelClassArmorWeapon;

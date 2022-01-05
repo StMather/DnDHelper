@@ -3,25 +3,23 @@ import NavBar from "./NavBar";
 import {PlayerInfoConsumer} from './PlayerInfo';
 import './Home.css'
 
-
-
 function Home(){
     
     return(
         <PlayerInfoConsumer> 
-               {context => (
+            {context => (
 
             <div className ="home">
-            <NavBar active="Home"/>
-            <div className="welcome">
-            <h1>Welcome</h1>
-            <h2> Please enter your characters name! </h2>
-            <h1 className="name"> {context.Name}</h1>
+                <NavBar active="Home"/>
+                <div className="welcome">
+                    <h1>Welcome</h1>
+                    <h2> Please enter your characters name! </h2>
+                    <h1 className="name"> {context.Name}</h1>
             
-            <label htmlFor="Name"> New Name:</label><br/>
-            <input className="newName" type="text" id="Name" name="Name" /><br/>
-            <button className="button" onClick= {() => context.saveName(document.getElementById("Name").value)}> Submit</button>
-            </div>
+                    <label htmlFor="Name"> New Name:</label><br/>
+                    <input className="newName" type="text" id="Name" name="Name" /><br/>
+                    <button className="button" onClick= {() => context.saveName(document.getElementById("Name").value)}> Submit</button>
+                </div>
             </div>
 
         )}
@@ -30,4 +28,4 @@ function Home(){
 
 }
 
-export default Home;
+export {Home};

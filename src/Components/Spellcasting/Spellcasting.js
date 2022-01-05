@@ -89,9 +89,7 @@ const calculateSpellSave = (classIn, chr, int, wis, level) =>{
         chr:bard,sorce, pally,warlock
         int:fighter,rouge
         wis:cleric,druid, ranger
-        n/a: barb, mok
-
-        need stats, and level for prof!!!
+        n/a: barb, monk
     */
    const base= 8;
    let mod= 0;
@@ -122,19 +120,19 @@ const calculateSpellSave = (classIn, chr, int, wis, level) =>{
    //class
    if(classIn === "cleric" || classIn === "druid" || classIn === "ranger")
    {
-   mod = Math.floor((wis - 10) /2)
-    output = base + mod + prof
-    return(
-        output
-    )
+        mod = Math.floor((wis - 10) /2)
+        output = base + mod + prof
+        return(
+            output
+        )
    }
    else if(classIn === "fighter" || classIn === "rogue" || classIn === "wizard")
    {
-   mod = Math.floor((int - 10) /2)
-    output = base + mod + prof
-    return(
-        output
-    )
+        mod = Math.floor((int - 10) /2)
+        output = base + mod + prof
+        return(
+            output
+        )
    }
    else if(classIn === "bard" || classIn === "sorcerer" || classIn === "paladin" || classIn ==="warlock")
    {
@@ -145,9 +143,9 @@ const calculateSpellSave = (classIn, chr, int, wis, level) =>{
     )
    }
    else{
-    return(
-        "None"
-    )
+        return(
+            "None"
+        )
    }
   
 
@@ -184,32 +182,32 @@ const calculateSpellAttackBonus = (classIn, chr, int, wis, level) =>{
     //class
     if(classIn === "cleric" || classIn === "druid" || classIn === "ranger")
     {
-    mod = Math.floor((wis - 10) /2)
-     output = mod + prof
-     return(
-         output
-     )
+        mod = Math.floor((wis - 10) /2)
+        output = mod + prof
+        return(
+            output
+        )
     }
     else if(classIn === "fighter" || classIn === "rogue" || classIn === "wizard")
     {
-    mod = Math.floor((int - 10) /2)
-     output = mod + prof
-     return(
-         output
-     )
+        mod = Math.floor((int - 10) /2)
+        output = mod + prof
+        return(
+            output
+        )
     }
     else if(classIn === "bard" || classIn === "sorcerer" || classIn === "paladin" || classIn ==="warlock")
     {
-    mod = Math.floor((chr - 10) /2)
-     output = mod + prof
-     return(
-         output
-     )
+        mod = Math.floor((chr - 10) /2)
+        output = mod + prof
+        return(
+            output
+        )
     }
     else{
-     return(
-         "None"
-     )
+        return(
+            "None"
+        )
     }
 }
 
@@ -220,34 +218,33 @@ let mod =0;
 
     if(classIn === "cleric" || classIn === "druid" || classIn === "ranger")
     {
-    mod = Math.floor((wis - 10) /2)
-     return(
-         `Wis-${mod}`
-     )
+        mod = Math.floor((wis - 10) /2)
+        return(
+            `Wis-${mod}`
+        )
     }
     else if(classIn === "fighter" || classIn === "rogue" || classIn === "wizard")
     {
-    mod = Math.floor((int - 10) /2)
-     return(
-        `Int-${mod}`
-     )
+        mod = Math.floor((int - 10) /2)
+        return(
+            `Int-${mod}`
+        )
     }
     else if(classIn === "bard" || classIn === "sorcerer" || classIn === "paladin" || classIn ==="warlock")
     {
-    mod = Math.floor((chr - 10) /2)
-     return(
-        `Chr-${mod}`
-     )
+        mod = Math.floor((chr - 10) /2)
+        return(
+            `Chr-${mod}`
+        )
     }
     else{
-     return(
-         "None"
-     )
+        return(
+            "None"
+        )
     }
 }
 
 function SpellCasting () {
-
     return(
         <PlayerInfoConsumer> 
             {context => (

@@ -5,14 +5,10 @@ import App from './App';
 import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import {PlayerInfoProvider} from './Components/PlayerInfo';
-
-import{
-  DungeonMaster,
-  Home,
-  Player,
-  SpellInfo
-
-} from "./Components";
+import {DungeonMaster} from './Components/DungeonMaster';
+import{Home} from './Components/Home';
+import{Player} from './Components/Player';
+import{SpellInfo} from './Components/SpellInfo/SpellInfo' 
 
 ReactDOM.render(
   <PlayerInfoProvider>
@@ -35,6 +31,11 @@ Add below routes later as they are built, be sure to import as well
       <Route path="/rules" element={<Rules />}/>
       <Route path="/spells" element={<Spells />}/>
       <Route path="/conditions" element={<Conditions />}/>
+
+      './Home',
+      './Player',
+      './SpellInfo'
+      from "./Components";
 
 */
 

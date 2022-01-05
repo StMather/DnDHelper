@@ -76,9 +76,6 @@ class StatBlock extends Component{
          this.setState({chr: this.state.chr -1})
       }
 
-      
-
-
     render(){
         return(
             <PlayerInfoConsumer> 
@@ -100,5 +97,3 @@ class StatBlock extends Component{
 }
 
 export default StatBlock;
-
-

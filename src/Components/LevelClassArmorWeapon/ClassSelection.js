@@ -5,22 +5,20 @@ let results =[];
 let error = true;
 
 function RenderClasses(){
-        if(!error){
-            //console.log("Renderclass:");
-            //console.log(results);
-            return results.map((item) =>(
-                <PClass
-                key ={item.index}
-                pclass ={item}
-                />
-    
-        ));
-        }
-        else{
-            
-            return <option className="options" value="-1">Level First</option>
-            
-        }
+    if(!error){
+        return results.map((item) =>(
+            <PClass
+            key ={item.index}
+            pclass ={item}
+            />
+
+    ));
+    }
+    else{
+        
+        return <option className="options" value="-1">Level First</option>
+        
+    }
 }
 
 function ClassSelection () {

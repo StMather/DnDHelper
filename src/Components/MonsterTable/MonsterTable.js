@@ -21,17 +21,13 @@ class MonsterTable extends Component{
     }
 
 
-    CallAPIMonster(props){//change to use for individual monster call
-        //let lowered = props.toLowerCase();
+    CallAPIMonster(props){
         const testurl= `https://www.dnd5eapi.co/api/monsters?challenge_rating=${props}`
-        //const testurl = `https://www.dnd5eapi.co/api/spells/acid-arrow`
         fetch(testurl)
         .then(response => response.json()) // Parsing the data into a JavaScript object
         .then((data) => {
             this.setState({Monsters: data.results});
-        }) // Displaying the data in an alert popup  
-
-       
+        })  
         .catch((error) => {
             console.log(error);
         });
@@ -48,9 +44,7 @@ class MonsterTable extends Component{
     BuildMonsterAPI(props){
         if(props !== "-1")
         {
-            //let lowered = props.toLowerCase();
             const testurl= `https://www.dnd5eapi.co${props}`
-            //const testurl = `https://www.dnd5eapi.co/api/spells/acid-arrow`
             fetch(testurl)
             .then(response => response.json()) // Parsing the data into a JavaScript object
             .then((data) => {
@@ -59,8 +53,7 @@ class MonsterTable extends Component{
                 newMonsters.push(monster)
                     
                 this.setState({Monsters: newMonsters});
-            }) // Displaying the data in an alert popup  
-    
+            }) 
             .catch((error) => {
                 console.log(error);
             });
@@ -74,7 +67,7 @@ class MonsterTable extends Component{
                 return (
                     this.state.Monsters.map((item) =>(
                     <item.render/>
-                ))
+                    ))
                 )
             }
         }
@@ -134,8 +127,8 @@ class MonsterTable extends Component{
                         </select>
                     </div>
                     <button className="button" onClick={() => this.monsterSelectionDrop(this.state.ChallangeRating)}>Query</button>
-
                     <br/>
+
                     <label htmlFor="classDrop"> Monsters</label>
                     <div className="DMDropDown" >
                         <select id="monsterDrop" onChange={this.changeTempMonsterAPI}>
@@ -143,8 +136,10 @@ class MonsterTable extends Component{
                             <MonsterSelection results={this.state.Results} error={this.state.MonsterSeclectionError}/>
                         </select>
                     </div>
-                    <button className="button" onClick={() => this.BuildMonsterAPI(this.state.TempMonsterAPI)}>Monster Selection: {this.state.TempMonsterAPI.substring(14)}</button>
+
+                    <button className="button" onClick={() => this.BuildMonsterAPI(this.state.TempMonsterAPI)}>Add Monster</button>
                 </div>
+
                 {this.renderMonster()}   
             </div>
         )
@@ -152,5 +147,3 @@ class MonsterTable extends Component{
 }
 
 export default MonsterTable;
-
-

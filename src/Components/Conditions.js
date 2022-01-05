@@ -7,10 +7,8 @@ function Conditions (){
         <div className="conditions">
             <NavBar active="Conditions" />
             <h1>No Coditions yet</h1>
-
         </div>
     )
 }
 
 export default Conditions;
-

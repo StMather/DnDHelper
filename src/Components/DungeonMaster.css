@@ -100,10 +100,11 @@
   display: grid;
   grid-template-areas: "select";
   align-items: center;
+  width: 80%;
   left: 25%;
   right: auto;
   text-align: center;
-  transform: translate(10%, 0);
+  transform: translate(12%, 0);
 }
 
 DMDropdown,

@@ -34,12 +34,12 @@ async CallAPISpells(props){
         this.setState({spellData:response.data.results});
         this.setState({spellError:false});
 
-            for(var i = 0; i < this.state.spellData.length ; i++)
-            {
-                let tempData = this.state.spellData[i]
-                this.UpgradeSpell(tempData.url, this.state.spellError, i);
-                
-            }
+        for(var i = 0; i < this.state.spellData.length ; i++)
+        {
+            let tempData = this.state.spellData[i]
+            this.UpgradeSpell(tempData.url, this.state.spellError, i);
+            
+        }
     }
     
     UpgradeSpell = async (url, error, index) =>{
@@ -99,40 +99,31 @@ render(){
             <PlayerInfoConsumer> 
                {context => (
                <div className="Player">
-                <NavBar active="Player"/>
-                <div className="CharBlock">
-                    
-                    <div className="name"> 
-                    <h3>Name: {context.Name}</h3>
-                    <h4>Class: {context.Class}</h4>
-                    <h4>Level: {context.level}</h4>
-                    <h4>Weapon: {context.weapon}</h4>
-                    <this.ArmorName props={context.armor}/>
-                    </div>
-                    
-                    <LevelClassArmorWeapon/>
-
-                    <AttackStats/>
-
-                    <StatBlock/>
-
-                    <SpellCasting/>
-
-                    <div className="slottitle">
-                        <h1 className="slottitle" ><button className = "button" onClick={() =>this.CallAPISpells(context.Class)}>Update Spells</button>Spell Slots</h1>
-                    </div>
-
-                    <SpellSlots/>
-                </div>       
-                <SpellGrid spellData={this.state.spellData} error ={this.state.spellError}/>
-
-
-            </div>
+                    <NavBar active="Player"/>
+                    <div className="CharBlock">
+                        <div className="name"> 
+                            <h3>Name: {context.Name}</h3>
+                            <h4>Class: {context.Class}</h4>
+                            <h4>Level: {context.level}</h4>
+                            <h4>Weapon: {context.weapon}</h4>
+                            <this.ArmorName props={context.armor}/>
+                        </div>
+                        <LevelClassArmorWeapon/>
+                        <AttackStats/>
+                        <StatBlock/>
+                        <SpellCasting/>
+                        <div className="slottitle">
+                            <h1 className="slottitle" ><button className = "button" onClick={() =>this.CallAPISpells(context.Class)}>Update Spells</button>  Spell Slots</h1>
+                        </div>
+                        <SpellSlots/>
+                    </div>       
+                    <SpellGrid spellData={this.state.spellData} error ={this.state.spellError}/>
+                </div>
             )}
-            </PlayerInfoConsumer>
+        </PlayerInfoConsumer>
         )
     }
 
 }
 
-export default Player;
+export {Player};

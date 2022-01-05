@@ -9,11 +9,11 @@ function NavBar(props){
 
     switch (props.active) {
         case 'DM':
-                dmButton ='NavActive';
-                break;
+            dmButton ='NavActive';
+            break;
         case 'Player':
-                playerButton ='NavActive';
-                break;
+            playerButton ='NavActive';
+            break;
         case 'Home':
             homeButton = 'NavActive';
             break;
@@ -22,19 +22,19 @@ function NavBar(props){
         }
         return (
             <ul className="NavBar">
-            <div className="NavBarLeft">
-                <li className={homeButton}>
-                <NavLink to="/" >Home</NavLink>
-                </li>            
-            </div>
-            <div className="NavBarRight">
-                <li className={playerButton}>
-                <NavLink to="/player" >Player</NavLink>
-                </li>
-                <li className={dmButton}>
-                <NavLink to="/dungeonMaster" >Dungeon Master</NavLink>
-                </li>
-            </div>
+                <div className="NavBarLeft">
+                    <li className={homeButton}>
+                        <NavLink to="/" >Home</NavLink>
+                    </li>            
+                </div>
+                <div className="NavBarRight">
+                    <li className={playerButton}>
+                        <NavLink to="/player" >Player</NavLink>
+                    </li>
+                    <li className={dmButton}>
+                        <NavLink to="/dungeonMaster" >Dungeon Master</NavLink>
+                    </li>
+                </div>
             </ul>
         )
     

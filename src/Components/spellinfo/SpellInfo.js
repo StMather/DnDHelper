@@ -24,27 +24,26 @@ class SpellInfo extends Component{
 
     render(){
         
-        if(this.state.spellError)
-        {
-            
-            return(
-                <div className="spell">
-                    <NavBar active="none"/>
-                    <button className = "spellbutton" onClick={() =>this.setSpellErrorFalse()}>Show Spell</button>
-                    <SpellInfoRender/>
-                </div>
+    if(this.state.spellError)
+    {
+        return(
+            <div className="spell">
+                <NavBar active="none"/>
+                <button className = "spellbutton" onClick={() =>this.setSpellErrorFalse()}>Show Spell</button>
+                <SpellInfoRender/>
+            </div>
 
-            )
-        }
-        else{
-            return(
-                <div className="spell">
-                    <NavBar active="none"/>
-                    <SpellInfoRender/>
-                </div>
-            )
-        }
+        )
+    }
+    else{
+        return(
+            <div className="spell">
+                <NavBar active="none"/>
+                <SpellInfoRender/>
+            </div>
+        )
+    }
     }
 
 }
-export default SpellInfo;
+export {SpellInfo};
