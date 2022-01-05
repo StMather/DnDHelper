@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {PlayerInfoConsumer} from './PlayerInfo';
 
 let armorClass=0;
@@ -9,7 +9,6 @@ function ArmorClass(props){
         const url= `https://www.dnd5eapi.co${props.armorIn}`
         const dexMod= (Math.floor((props.dexIn - 10) /2));
 
-        //useEffect(() =>{
             if(props.armorIn !== "none" && props.armorIn !== 'None' && props.armorIn !== '-1' && !props.armorIn.includes("magic")){
                 fetch(url)
                 .then(response => response.json()) // Parsing the data into a JavaScript object

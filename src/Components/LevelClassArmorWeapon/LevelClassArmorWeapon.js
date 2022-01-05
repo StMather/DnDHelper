@@ -43,7 +43,7 @@ class LevelClassArmorWeapon extends Component{
             <PlayerInfoConsumer> 
             {context => (
             <div className ="classlevel">
-                        <label for="levelDrop">Level: </label>
+                        <label htmlFor="levelDrop">Level: </label>
                         <div className="dropDown" >
                             <select id="levelDrop" onChange={this.levelChange}>
                                 <option className="options" value="1">1</option>
@@ -70,21 +70,21 @@ class LevelClassArmorWeapon extends Component{
                         </div>
                     
                         <br/>
-                        <label for="classDrop"> Class:</label>
+                        <label htmlFor="classDrop"> Class:</label>
                         <div className="dropDown" >
                             <select id="classDrop" onChange={this.classChange}>
                                 <ClassSelection/>
                             </select>
                         </div>
                 
-                        <label className="h4txt" for="weapon">Weapon: </label>
+                        <label className="h4txt" htmlFor="weapon">Weapon: </label>
                             <div className="dropDown" >
                             <select id="weapon" onChange={this.weaponChange}>
                                 <WeaponSelection/>
                             </select>
                             </div>
                         <br/>
-                        <label className="h4txt" for="armor">Armor: </label>
+                        <label className="h4txt" htmlFor="armor">Armor: </label>
                             <div className="dropDown" >
                             <select id="armor" onChange={this.armorChange}>
                                 <ArmorSelection/>

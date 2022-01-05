@@ -2,7 +2,6 @@ import React from "react";
 import {PlayerInfoConsumer} from '../PlayerInfo';
 
 const calculateCantrips = (classIn, levelIn) =>{
-    console.log(`${classIn} : ${levelIn}`)
 
     if(classIn === "barbarian" || classIn === "monk" || classIn === "paladin" || classIn === "ranger")
    {

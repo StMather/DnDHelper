@@ -35,7 +35,7 @@ function WeaponSelection () {
             
         })
     
-    }, [])
+    }, [url])
     return(
             
         <RenderWeapons/>

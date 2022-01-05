@@ -23,7 +23,7 @@ function RenderArmor(){
         }
 }
 
-function WeaponSelection () {
+function WeaponSelection (){
     const url= `https://www.dnd5eapi.co/api/equipment-categories/armor`
 
     useEffect(() =>{
@@ -35,7 +35,7 @@ function WeaponSelection () {
             
         })
     
-    }, [])
+    }, [url])
     return(
             
         <RenderArmor/>

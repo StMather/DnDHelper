@@ -104,7 +104,7 @@ class MonsterTable extends Component{
         return(
             <div className = "MonsterBlock" >
                 <div className="monsterPicker">
-                    <label for="levelDrop" className="CRtitle">ChallangeRating: {this.state.ChallangeRating} </label>
+                    <label htmlFor="levelDrop" className="CRtitle">ChallangeRating: {this.state.ChallangeRating} </label>
                         <div className="dropDown" >
                             <select id="crDrop" onChange={this.changeChallangeRating}>
                                 <option className="options" value="0">Challange Rating</option>
@@ -141,7 +141,7 @@ class MonsterTable extends Component{
                         <button className="button" onClick={() => this.monsterSelectionDrop(this.state.ChallangeRating)}>Query</button>
 
                         <br/>
-                        <label for="classDrop"> Monsters</label>
+                        <label htmlFor="classDrop"> Monsters</label>
                         <div className="dropDown" >
                             <select id="monsterDrop" onChange={this.changeTempMonsterAPI}>
                             <option className="options" value="-1">None</option>

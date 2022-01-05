@@ -35,7 +35,7 @@ function ClassSelection () {
             
         })
     
-    }, [])
+    }, [url])
     return(
             
         <RenderClasses/>

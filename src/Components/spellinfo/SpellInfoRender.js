@@ -218,7 +218,7 @@ function SpellInfoRender(props){
             
         })
     
-    }, [])
+    }, [url])
         
     
         return(
