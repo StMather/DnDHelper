@@ -39,9 +39,14 @@ function AttackStats(){
             {context => (
             <div className="attackdamage">
                 <ArmorClass armorIn={context.armor} dexIn={context.dex}/>
-                <h4><button className = "button" onClick={() =>context.saveArmorClass(armorClass) }>Update AC </button> AC: {context.armorClass}</h4>
+                <h4><button className = "button" onClick={() =>context.saveArmorClass(armorClass) }>Update AC</button> AC: {context.armorClass}</h4>
                 <h4>Attack Mod - Str: {Math.floor((context.str - 10) /2)} Dex: {Math.floor((context.dex - 10) /2)}</h4>
-                
+                <button className="button" onClick={() => context.rollAttack("dex")}>Attack: dex!</button>
+                <button className="button" onClick={() => context.rollAttack("str")}>Attack: str!</button>
+                    <span className="h4txt" >Roll: {context.attackRoll}</span>
+                <br/>
+                <button className="button" onClick={() => context.rollDamage("str")}>Damage: {context.damageDie}</button>
+                    <span className="h4txt">Roll: {context.damageRoll}</span>
             </div>
 
         )}
@@ -52,11 +57,8 @@ function AttackStats(){
 
 /*
 Add attack and damage buttons back in when they are built
-                <button className="button" type="button">Attack!</button>
-                    <span className="h4txt" >Code numbers!</span>
-                <br/>
-                    <button className="button" type="button">Damage!</button>
-                    <span className="h4txt">Code numbers!</span>
+                
+                    
 */
 
 export default AttackStats 

@@ -180,7 +180,6 @@ function RenderSpellInfo(){
                 <h1 className="red">{results.name}</h1>
                 <h2> {results.desc}</h2>
                 <h2><span className="red">Range: </span>{results.range}</h2>
-                <h2><span className="red">Components: </span>{results.components}</h2>
                 <Components/>
                 <Materials/>
                 <HigherLevel/>

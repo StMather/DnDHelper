@@ -94,6 +94,35 @@ async CallAPISpells(props){
         }
     }
 
+    WeaponName = (props) =>{
+        let stringProp =  (props.props);
+        if (typeof stringProp === 'string'){
+            if(stringProp.includes("magic")){
+                let toReturn = stringProp.substring(17)
+                return(
+                    <h4>Armor: {toReturn} </h4>
+                )
+            }
+            if(stringProp.includes("equipment")){
+                let toReturn = stringProp.substring(15)
+                return(
+                    <h4>Armor: {toReturn} </h4>
+                )
+            }
+            else{
+                return(
+                    <h4>Armor: {stringProp} </h4>
+                )
+            }
+        }
+       
+        else{
+            return(
+                <h4>Armor: {props.props}</h4>
+            )
+        }
+    }
+
 render(){
         return(
             <PlayerInfoConsumer> 
@@ -105,7 +134,7 @@ render(){
                             <h3>Name: {context.Name}</h3>
                             <h4>Class: {context.Class}</h4>
                             <h4>Level: {context.level}</h4>
-                            <h4>Weapon: {context.weapon}</h4>
+                            <this.WeaponName props={context.weapon}/>
                             <this.ArmorName props={context.armor}/>
                         </div>
                         <LevelClassArmorWeapon/>
